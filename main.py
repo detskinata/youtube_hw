@@ -23,7 +23,6 @@ class Channel:
         self.view_count = self.channel['items'][0]['statistics']['viewCount']
 
     def print_info(self):
-        '''вывод информации о канале'''
         print(json.dumps(self.channel, indent=2, ensure_ascii=False))
 
     @property
