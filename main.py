@@ -18,7 +18,7 @@ class Channel:
         self.title = self.channel['items'][0]['snippet']['title']
         self.description = self.channel['items'][0]['snippet']['description']
         self.url = 'https://www.youtube.com/' + self.__channel_id
-        self.subscriber_count = self.channel['items'][0]['statistics']['subscriberCount']
+        self.subscriber_count = int(self.channel['items'][0]['statistics']['subscriberCount'])
         self.video_count = self.channel['items'][0]['statistics']['videoCount']
         self.view_count = self.channel['items'][0]['statistics']['viewCount']
 
@@ -46,6 +46,18 @@ class Channel:
         youtube = build('youtube', 'v3', developerKey=api_key)
         return youtube
 
+    def __str__(self):
+        return f"Youtube-канал: {self.title}"
+
+    def __lt__(self, other):
+        return self.subscriber_count > other.subscriber_count
+
+    def __add__(self, other) -> int:
+        return self.subscriber_count + other.subscriber_count
+
+
+ch1 = Channel('UCMCgOm8GZkHp8zJ6l7_hIuA')
+ch2 = Channel('UC1eFXmJNkjITxPFWTy6RsWg')
 
 vdud = Channel('UCMCgOm8GZkHp8zJ6l7_hIuA')
 # vdud.print_info()
@@ -55,3 +67,5 @@ vdud = Channel('UCMCgOm8GZkHp8zJ6l7_hIuA')
 
 # vdud.channel_id = 'Новое название'
 vdud.to_json('vdud.json')
+print(ch1)
+print(ch2)
