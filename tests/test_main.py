@@ -27,7 +27,7 @@ def test_video_init():
 
 def test_video_str():
     video1 = Video('9lO06Zxhu88')
-    video1.__str__() == 'Как устроена IT-столица мира / Russian Silicon Valley (English subs)'
+    assert video1.__str__() == 'Как устроена IT-столица мира / Russian Silicon Valley (English subs)'
 
 
 def test_plvideo_init():
@@ -36,4 +36,4 @@ def test_plvideo_init():
 
 def test_plvideo_str():
     video2 = PLVideo('BBotskuyw_M', 'PL7Ntiz7eTKwrqmApjln9u4ItzhDLRtPuD')
-    video2.__str__() == 'Пушкин: наше все? (Литература)'
+    assert video2.__str__() == 'Пушкин: наше все? Литература'
