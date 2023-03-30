@@ -34,6 +34,9 @@ def test_plvideo_init():
     video2 = PLVideo('BBotskuyw_M', 'PL7Ntiz7eTKwrqmApjln9u4ItzhDLRtPuD')
     assert video2.playlist_title == 'Литература'
 
+
 def test_plvideo_str():
     video2 = PLVideo('BBotskuyw_M', 'PL7Ntiz7eTKwrqmApjln9u4ItzhDLRtPuD')
     assert video2.__str__() == 'Пушкин: наше все? Литература'
+
+
